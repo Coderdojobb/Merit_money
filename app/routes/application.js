@@ -6,7 +6,7 @@ export default Ember.Route.extend({
 },
 actions: {
   signIn: function(provider = "google") {
-    this.get("session").open("firebase", { provider: provider, settings: {scope: 'email', prompt: 'consent'}}).then(function(data) {
+    this.get("session").open("firebase", { provider: provider, settings: {scope: 'email'}}).then(function(data) {
       console.log(data.currentUser);
     });
   },
